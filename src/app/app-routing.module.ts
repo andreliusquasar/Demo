@@ -13,6 +13,10 @@ const routes: Routes = [
      {
         path: 'episodes',
         loadChildren: () => import('./components/episodes/episodes.module').then(e => e.EpisodesModule)
+     },
+     {
+        path: 'dashboard',
+        loadChildren: () => import('./components/dashboard/dashboard.module').then(d => d.DashBoardModule)
      }
 ]
 @NgModule({
