@@ -10,7 +10,10 @@ const routes: Routes = [
         path: 'locations',
         loadChildren: () => import('./components/locations/locations.module').then(l => l.LocationsModule)
      },
-      
+     {
+        path: 'episodes',
+        loadChildren: () => import('./components/episodes/episodes.module').then(e => e.EpisodesModule)
+     }
 ]
 @NgModule({
     imports: [RouterModule.forRoot(routes)],
