@@ -7,12 +7,12 @@ import {  Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class ServiceService {
+export class ServiceRequest {
 
     constructor(private http: HttpClient) {}
 
-    getCharacters(): Observable<ICharacter[]> {
-      return this.http.get<ICharacter[]>('https://rickandmortyapi.com/api/character');
+    getCharacters(): Observable<ICharacter> {
+      return this.http.get<ICharacter>('https://rickandmortyapi.com/api/character');
     }
     
     getLocations(): Observable<ICharacter[]> {
