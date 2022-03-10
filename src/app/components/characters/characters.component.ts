@@ -1,15 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { ServiceRequest } from './../../shared/services/service.service';
+import { Component } from '@angular/core';
+import { pluck } from 'rxjs';
 
 @Component({
   selector: 'app-characters',
   templateUrl: './characters.component.html',
   styleUrls: ['./characters.component.scss']
 })
-export class CharactersComponent implements OnInit {
+export class CharactersComponent {
 
-  constructor() { }
+  characters$ = this.service.getCharacters().pipe(pluck('results')); 
 
-  ngOnInit(): void {
-  }
+  constructor(private service: ServiceRequest) { }
 
 }
