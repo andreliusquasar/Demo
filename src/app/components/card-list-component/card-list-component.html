@@ -13,7 +13,7 @@
                 </div>
                 <span *ngIf="props.location" class="d-block">{{props.location.name}}</span>
                 <span *ngIf="props.dimension" class="d-block">{{props.dimension}}</span>
-                <span *ngIf="props.episode" class="d-block">{{props.episode}}</span>
+                <span *ngIf="props.episode && !props.gender" class="d-block">{{props.episode}}</span>
             </div>
         </div>
     </div>

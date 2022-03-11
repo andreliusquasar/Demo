@@ -20,6 +20,6 @@ export class ServiceRequest {
     }
 
     getEpisodes(): Observable<ICharacter[]> {
-      return this.http.get<ICharacter[]>('https://rickandmortyapi.com/api/episodes');
+      return this.http.get<ICharacter[]>('https://rickandmortyapi.com/api/episode');
     }
 }
