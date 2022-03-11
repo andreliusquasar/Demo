@@ -2,8 +2,8 @@ import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-card-list-component',
-  templateUrl: './card-list-component.component.html',
-  styleUrls: ['./card-list-component.component.scss']
+  templateUrl: './card-list-component.html',
+  styleUrls: ['./card-list-component.scss']
 })
 export class CardListComponent {
 
