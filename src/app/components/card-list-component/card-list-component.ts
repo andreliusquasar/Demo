@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-card-list-component',
@@ -11,7 +11,13 @@ export class CardListComponent {
   
   @Input() inputProperts: any;
 
+  @Output() actionEmmiter: EventEmitter<number> = new EventEmitter(); 
+
   constructor() {
     this.title = '';
+   }
+
+   action(id: number): void {
+     this.actionEmmiter.next(id);
    }
 }
