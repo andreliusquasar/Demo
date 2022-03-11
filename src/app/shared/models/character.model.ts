@@ -1,16 +1,4 @@
 export interface ICharacter {
-    info: IInfo,
-    results: ICharacterSchema[]
-}
-
-export interface IInfo {
-        count: number;
-        pages: number;
-        next: string;
-        prev: any;
-}
-
-export interface ICharacterSchema {
     id: number;
     name: string;
     status: string;

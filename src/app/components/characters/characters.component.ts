@@ -18,9 +18,7 @@ export class CharactersComponent {
     ) { }
 
   redirectTo(id: number): void {
-    console.log('testando redirect');
     this.router.navigate(['characters/detail', id]);
-
   }
 
 }
