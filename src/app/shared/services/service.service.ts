@@ -14,7 +14,11 @@ export class ServiceRequest {
     getCharacters(): Observable<ICharacter> {
       return this.http.get<ICharacter>('https://rickandmortyapi.com/api/character');
     }
-    
+
+    getCharactersDetail(id: number): Observable<ICharacter> {
+      return this.http.get<ICharacter>(`https://rickandmortyapi.com/api/character/${id}`);
+    }
+
     getLocations(): Observable<ICharacter[]> {
       return this.http.get<ICharacter[]>('https://rickandmortyapi.com/api/location');
     }
