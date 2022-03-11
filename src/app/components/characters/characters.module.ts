@@ -3,6 +3,7 @@ import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
 import { CharactersRoutingModule } from "./characters-routing.module";
 import { CharactersComponent } from "./characters.component";
+import { CharacterDetailComponent } from './character-detail/character-detail.component';
 
 @NgModule({
     imports: [
@@ -11,7 +12,8 @@ import { CharactersComponent } from "./characters.component";
         CardListModule
     ],
     declarations: [
-        CharactersComponent
+        CharactersComponent,
+        CharacterDetailComponent
     ]
 })
 export class CharactersModule {}
