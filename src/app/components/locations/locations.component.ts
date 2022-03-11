@@ -1,15 +1,15 @@
+import { ServiceRequest } from './../../shared/services/service.service';
 import { Component, OnInit } from '@angular/core';
+import { pluck } from 'rxjs';
 
 @Component({
   selector: 'app-locations',
   templateUrl: './locations.component.html',
   styleUrls: ['./locations.component.scss']
 })
-export class LocationsComponent implements OnInit {
+export class LocationsComponent {
 
-  constructor() { }
+  locations$ = this.service.getLocations().pipe(pluck('results')); 
 
-  ngOnInit(): void {
-  }
-
+  constructor(private service: ServiceRequest) { }
 }
