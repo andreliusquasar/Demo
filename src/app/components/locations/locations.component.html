@@ -1,1 +1,3 @@
-<p>locations works!</p>
+<ng-container *ngIf="locations$ | async as locations">
+    <app-card-list-component [inputProperts]="locations" [title]="'Locations'"></app-card-list-component>
+</ng-container>
