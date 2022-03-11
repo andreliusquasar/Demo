@@ -1,1 +1,3 @@
-<p>episodes works!</p>
+<ng-container *ngIf="episodes$ | async as episodes">
+    <app-card-list-component [inputProperts]="episodes" [title]="'Episodes'"></app-card-list-component>
+</ng-container>
