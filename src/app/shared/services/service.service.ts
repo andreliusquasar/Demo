@@ -4,6 +4,7 @@ import { ICharacter } from './../models/character.model';
 import { Injectable } from '@angular/core';
 import {  Observable } from 'rxjs';
 import { ILocation } from '../models/location.model';
+import { IEpisode } from '../models/episode.model';
 
 @Injectable({
   providedIn: 'root'
@@ -30,5 +31,9 @@ export class ServiceRequest {
 
     getEpisodes(): Observable<ICharacter[]> {
       return this.http.get<ICharacter[]>('https://rickandmortyapi.com/api/episode');
+    }
+    
+    getEpisodeDetail(id: number): Observable<IEpisode> {
+      return this.http.get<IEpisode>(`https://rickandmortyapi.com/api/episode/${id}`);
     }
 }
