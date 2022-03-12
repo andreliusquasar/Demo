@@ -1,0 +1,19 @@
+<ng-container *ngIf="locationDetail$ | async as location">
+    <a routerLink="/locations" class="btn btn-outline-dark">Back</a>
+    <div class="card mb-3 container-detail" >
+        <div class="row g-0">
+          <div class="col-md-3">
+            <img src="../../../../assets/img/location.jpeg" class="img-fluid rounded-start" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">{{location.name}}</h5>
+              <ul class="list-group list-group-flush">
+                <li *ngIf="location.type" class="list-group-item">Type: {{location.type}}</li>
+                <li class="list-group-item">Dimension: {{location.dimension}}</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+    </div>
+</ng-container>

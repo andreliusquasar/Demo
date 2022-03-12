@@ -3,6 +3,7 @@ import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
 import { LocationsRoutingModule } from "./locations-routing.module";
 import { CardListModule } from '../card-list-component/card-list-component.module';
+import { LocationDetailComponent } from './location-detail/location-detail.component';
 
 @NgModule({
     imports: [
@@ -11,7 +12,8 @@ import { CardListModule } from '../card-list-component/card-list-component.modul
         CardListModule
     ],
     declarations: [
-        LocationsComponent
+        LocationsComponent,
+        LocationDetailComponent
     ],
     exports: [LocationsComponent]
 })
