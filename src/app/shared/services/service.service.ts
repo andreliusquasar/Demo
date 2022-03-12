@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { ICharacter } from './../models/character.model';
 import { Injectable } from '@angular/core';
 import {  Observable } from 'rxjs';
+import { ILocation } from '../models/location.model';
 
 @Injectable({
   providedIn: 'root'
@@ -21,6 +22,10 @@ export class ServiceRequest {
 
     getLocations(): Observable<ICharacter[]> {
       return this.http.get<ICharacter[]>('https://rickandmortyapi.com/api/location');
+    }
+   
+    getLocationDetail(id: number): Observable<ILocation> {
+      return this.http.get<ILocation>(`https://rickandmortyapi.com/api/location/${id}`);
     }
 
     getEpisodes(): Observable<ICharacter[]> {
