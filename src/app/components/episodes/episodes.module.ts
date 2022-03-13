@@ -9,13 +9,15 @@ import { EpisodesComponent } from "./episodes.component";
 import { EpisodesRoutingModule } from './episodes-routing.module';
 import { CardListModule } from '../card-list-component/card-list-component.module';
 import { EpisodeDetailComponent } from './episode-detail/episode-detail.component';
+import { PrettyJsonModule } from 'angular2-prettyjson';
 
 
 @NgModule({
     imports: [
         CommonModule,
         EpisodesRoutingModule,
-        CardListModule
+        CardListModule,
+        PrettyJsonModule
     ],
     declarations: [
         EpisodesComponent, 
