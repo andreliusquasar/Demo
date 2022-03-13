@@ -23,4 +23,26 @@ a {
             background-color: rgb(214, 61, 46)!important;
         } 
     }
+
+    .div-characters {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        .title {
+            margin-right: 10px;
+        }
+        
+        .character-item {
+            margin: 0 10px 0 0px;
+
+            &::after {
+                content: ","
+            }
+            
+            &:last-child::after {
+                content: ""
+            } 
+        }
+    }
 }

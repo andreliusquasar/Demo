@@ -1,4 +1,4 @@
-<ng-container *ngIf="episodeDetail$ | async as episode">
+<ng-container>
     <a routerLink="/episodes" class="btn btn-outline-dark">Back</a>
     <div class="card mb-3 container-detail" >
         <div class="row g-0">
@@ -7,10 +7,16 @@
           </div>
           <div class="col-md-8">
             <div class="card-body">
-              <h5 class="card-title">{{episode.name}}</h5>
+              <h5 class="card-title">{{episodeDetail.name}}</h5>
               <ul class="list-group list-group-flush">
-                <li class="list-group-item">Air date: {{episode.air_date}}</li>
-                <li *ngIf="episode.episode" class="list-group-item">Episode: {{episode.episode}}</li>
+                <li class="list-group-item">Air date: {{episodeDetail.air_date}}</li>
+                <li *ngIf="episodeDetail.episode" class="list-group-item">Episode: {{episodeDetail.episode}}</li>
+                <li class="list-group-item"> 
+                  <div class="div-characters">
+                    <div class="title">Characters:</div>
+                    <div class="character-item" *ngFor="let character of episodeDetail.characters">{{character.name}}</div>
+                  </div> 
+              </li>
               </ul>
             </div>
           </div>
