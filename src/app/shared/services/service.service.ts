@@ -13,24 +13,24 @@ export class ServiceRequest {
 
     constructor(private http: HttpClient) {}
 
-    getCharacters(): Observable<ICharacter> {
-      return this.http.get<ICharacter>('https://rickandmortyapi.com/api/character');
+    getCharacters(): Observable<ICharacter[]> {
+      return this.http.get<ICharacter[]>('https://rickandmortyapi.com/api/character');
     }
 
     getCharactersDetail(id: number): Observable<ICharacter> {
       return this.http.get<ICharacter>(`https://rickandmortyapi.com/api/character/${id}`);
     }
 
-    getLocations(): Observable<ICharacter[]> {
-      return this.http.get<ICharacter[]>('https://rickandmortyapi.com/api/location');
+    getLocations(): Observable<ILocation[]> {
+      return this.http.get<ILocation[]>('https://rickandmortyapi.com/api/location');
     }
    
     getLocationDetail(id: number): Observable<ILocation> {
       return this.http.get<ILocation>(`https://rickandmortyapi.com/api/location/${id}`);
     }
 
-    getEpisodes(): Observable<ICharacter[]> {
-      return this.http.get<ICharacter[]>('https://rickandmortyapi.com/api/episode');
+    getEpisodes(): Observable<IEpisode[]> {
+      return this.http.get<IEpisode[]>('https://rickandmortyapi.com/api/episode');
     }
     
     getEpisodeDetail(id: number): Observable<IEpisode> {
