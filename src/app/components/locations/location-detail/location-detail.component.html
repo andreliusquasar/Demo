@@ -12,6 +12,7 @@
                 <li *ngIf="location.type" class="list-group-item">Type: {{location.type}}</li>
                 <li class="list-group-item">Dimension: {{location.dimension}}</li>
               </ul>
+              <prettyjson [obj]="location"></prettyjson>
             </div>
           </div>
         </div>
