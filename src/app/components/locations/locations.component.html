@@ -1,3 +1,5 @@
 <ng-container *ngIf="locations$ | async as locations">
     <app-card-list-component (actionEmmiter)="redirectTo($event)" [inputProperts]="locations" [title]="'Locations'"></app-card-list-component>
 </ng-container>
+
+<ngx-spinner size="medium" bdOpacity=0.6 type="square-jelly-box"[fullScreen]="true"></ngx-spinner>
