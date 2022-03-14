@@ -1,6 +1,7 @@
+import { NgxSpinnerService } from 'ngx-spinner';
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { pluck, switchMap, tap } from 'rxjs';
+import { delay, pluck, switchMap, tap } from 'rxjs';
 import { ServiceRequest } from 'src/app/shared/services/service.service';
 
 @Component({
@@ -14,15 +15,17 @@ export class CharacterDetailComponent {
 
   characterDetail$ = this.route.params.pipe(
     pluck('id'),
-    switchMap((id: number) => this.service.getCharactersDetail(id)),
+    switchMap((id: number) => this.service.getCharactersDetail(id).pipe(delay(400), tap(() => this.spinner.hide()))),
     tap(res => this.getEpisodes(res.episode))
   )
 
   constructor(
     private route: ActivatedRoute,
-    private service: ServiceRequest
+    private service: ServiceRequest,
+    private spinner: NgxSpinnerService
   ) {
     this.episodes = [];
+    this.spinner.show();
   }
 
   private getEpisodes(episodes: string[]): void {
