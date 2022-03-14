@@ -1,6 +1,7 @@
+import { NgxSpinnerService } from 'ngx-spinner';
 import { ServiceRequest } from './../../shared/services/service.service';
 import { Component, OnInit } from '@angular/core';
-import { pluck } from 'rxjs';
+import { delay, pluck, tap } from 'rxjs';
 import { Router } from '@angular/router';
 
 @Component({
@@ -10,12 +11,15 @@ import { Router } from '@angular/router';
 })
 export class LocationsComponent {
 
-  locations$ = this.service.getLocations().pipe(pluck('results')); 
+  locations$ = this.service.getLocations().pipe(delay(400), pluck('results'), tap(() => this.spinner.hide())); 
 
   constructor(
     private service: ServiceRequest,
-    private router: Router
-    ) { }
+    private router: Router,
+    private spinner: NgxSpinnerService
+  ) { 
+    this.spinner.show();
+  }
 
   redirectTo(id: number): void {
     this.router.navigate(['locations/detail', id]);

@@ -18,7 +18,7 @@ export class CharactersComponent {
     private service: ServiceRequest,
     private router: Router,
     private spinner: NgxSpinnerService
-    ) {
+  ) {
       this.spinner.show();
      }
 
