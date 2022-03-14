@@ -5,6 +5,7 @@ import { LocationsRoutingModule } from "./locations-routing.module";
 import { CardListModule } from '../card-list-component/card-list-component.module';
 import { LocationDetailComponent } from './location-detail/location-detail.component';
 
+import { NgxSpinnerModule } from "ngx-spinner";
 import { PrettyJsonModule } from 'angular2-prettyjson';
 
 @NgModule({
@@ -12,7 +13,8 @@ import { PrettyJsonModule } from 'angular2-prettyjson';
         CommonModule,
         LocationsRoutingModule,
         CardListModule,
-        PrettyJsonModule
+        PrettyJsonModule,
+        NgxSpinnerModule
     ],
     declarations: [
         LocationsComponent,
