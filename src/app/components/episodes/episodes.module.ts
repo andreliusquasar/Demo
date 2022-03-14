@@ -10,6 +10,7 @@ import { EpisodesRoutingModule } from './episodes-routing.module';
 import { CardListModule } from '../card-list-component/card-list-component.module';
 import { EpisodeDetailComponent } from './episode-detail/episode-detail.component';
 import { PrettyJsonModule } from 'angular2-prettyjson';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { PrettyJsonModule } from 'angular2-prettyjson';
         CommonModule,
         EpisodesRoutingModule,
         CardListModule,
-        PrettyJsonModule
+        PrettyJsonModule,
+        NgxSpinnerModule
     ],
     declarations: [
         EpisodesComponent, 

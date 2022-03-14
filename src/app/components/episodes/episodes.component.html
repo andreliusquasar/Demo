@@ -1,3 +1,5 @@
 <ng-container *ngIf="episodes$ | async as episodes">
     <app-card-list-component (actionEmmiter)="redirectTo($event)" [inputProperts]="episodes" [title]="'Episodes'"></app-card-list-component>
 </ng-container>
+
+<ngx-spinner size="medium" bdOpacity=0.6 type="timer"[fullScreen]="true"></ngx-spinner>

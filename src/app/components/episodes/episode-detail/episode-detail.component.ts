@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { pluck } from 'rxjs';
+import { delay, pluck, tap } from 'rxjs';
 
-import { Apollo, gql, APOLLO_OPTIONS } from 'apollo-angular';
+import { NgxSpinnerService } from 'ngx-spinner';
+import { Apollo, gql } from 'apollo-angular';
 import { IEpisode } from 'src/app/shared/models/episode.model';
 
 @Component({
@@ -17,9 +18,11 @@ export class EpisodeDetailComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private apollo: Apollo
+    private apollo: Apollo,
+    private spinner: NgxSpinnerService
   ) {
     this.episodeDetail = this.initEpisodeDetail();
+    this.spinner.show();
   }
 
   ngOnInit(): void {
@@ -52,7 +55,7 @@ export class EpisodeDetailComponent implements OnInit {
        }
      }
       `
-    }).valueChanges.subscribe((res: any) => {
+    }).valueChanges.pipe(delay(400), tap(() => this.spinner.hide())).subscribe((res: any) => {
       this.episodeDetail = res.data.episode;
       console.log(this.episodeDetail);
     })
