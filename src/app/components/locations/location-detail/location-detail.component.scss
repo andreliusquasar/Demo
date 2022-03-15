@@ -1,44 +1,11 @@
+@import '../../../../../src/assets/styles/container-detail';
+
 a {
     margin-top: 50px;
     background-color: #fff;
 }
 
 .container-detail {
-    margin-top: 40px;
-    height: 70vh;
-    overflow: hidden;
-    overflow-y: auto;
-    background-color: rgb(60, 62, 68);
-    color: #fff;
-
-    ul > li {
-        padding-left: 0;
-
-        span {
-            height: 12px;
-            width: 12px;
-            background: #55cc44;
-            border-radius: 50%;
-            z-index: 2;
-            position: absolute;
-            bottom: 13px;
-            margin-left: 10px;
-        }
-
-        .color {
-            background-color: rgb(214, 61, 46)!important;
-        } 
-    }
-
-    .style-li {
-        background-color: rgb(60, 62, 68);
-        color: #fff;
-        border-bottom-color: #ccc;
-    }
-
-    ::ng-deep .custom-json span {color: white;}
+    @include container-detail;
 }
 
-img {
-    object-fit: none;
-}
