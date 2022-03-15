@@ -3,22 +3,22 @@
     <div class="card mb-3 container-detail" >
         <div class="row g-0">
           <div class="col-md-3">
-            <img src="../../../../assets/img/episodes.jpeg" class="img-fluid rounded-start" alt="...">
+            <img src="../../../../assets/img/episode.jpeg" class="img-fluid rounded-start" alt="...">
           </div>
           <div class="col-md-8">
             <div class="card-body">
               <h5 class="card-title">{{episodeDetail.name}}</h5>
               <ul class="list-group list-group-flush">
-                <li class="list-group-item">Air date: {{episodeDetail.air_date}}</li>
-                <li *ngIf="episodeDetail.episode" class="list-group-item">Episode: {{episodeDetail.episode}}</li>
-                <li class="list-group-item"> 
+                <li class="list-group-item style-li">Air date: {{episodeDetail.air_date}}</li>
+                <li *ngIf="episodeDetail.episode" class="list-group-item style-li">Episode: {{episodeDetail.episode}}</li>
+                <li class="list-group-item style-li"> 
                   <div class="div-characters">
                     <div class="title">Characters:</div>
                     <div class="character-item" *ngFor="let character of episodeDetail.characters">{{character.name}}</div>
                   </div> 
               </li>
               </ul>
-              <prettyjson [obj]="episodeDetail"></prettyjson>
+              <prettyjson [obj]="episodeDetail" class="custom-json"></prettyjson>
             </div>
           </div>
         </div>
