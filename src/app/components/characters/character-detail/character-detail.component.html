@@ -9,20 +9,20 @@
             <div class="card-body">
               <h5 class="card-title">{{character.name}}</h5>
               <ul class="list-group list-group-flush">
-                <li class="list-group-item">Status: {{character.status}} <span [ngClass]="{'color': character.status != 'Alive'}"></span> </li>
-                <li class="list-group-item">Species: {{character.species}}</li>
-                <li *ngIf="character.type" class="list-group-item">Type: {{character.type}}</li>
-                <li class="list-group-item">Gender: {{character.gender}}</li>
-                <li class="list-group-item">Origin: {{character.origin.name}}</li>
-                <li class="list-group-item">Location: {{character.location.name}}</li>
-                <li class="list-group-item"> 
+                <li class="list-group-item style-li">Status: {{character.status}} <span [ngClass]="{'color': character.status != 'Alive'}"></span> </li>
+                <li class="list-group-item style-li">Species: {{character.species}}</li>
+                <li *ngIf="character.type" class="list-group-item style-li">Type: {{character.type}}</li>
+                <li class="list-group-item style-li">Gender: {{character.gender}}</li>
+                <li class="list-group-item style-li">Origin: {{character.origin.name}}</li>
+                <li class="list-group-item style-li">Location: {{character.location.name}}</li>
+                <li class="list-group-item style-li"> 
                   <div class="div-episodes">
                     <div class="title">Episodes:</div>
                     <div class="episode-item" *ngFor="let episode of episodes">{{episode}}</div>
                   </div> 
               </li>
               </ul>
-              <prettyjson [obj]="character"></prettyjson>
+              <prettyjson [obj]="character" class="custom-json"></prettyjson>
             </div>
           </div>
         </div>
