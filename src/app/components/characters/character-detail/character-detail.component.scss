@@ -7,9 +7,10 @@ a {
     margin-top: 40px;
     height: 70vh;
     overflow: hidden;
-    overflow-y: scroll;
+    overflow-y: auto;
     background-color: rgb(60, 62, 68);
     color: #fff;
+    padding: 35px 0 0 35px;
 
     &::-webkit-scrollbar {
         width: 12px;
