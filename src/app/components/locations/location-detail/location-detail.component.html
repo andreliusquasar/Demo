@@ -3,16 +3,17 @@
     <div class="card mb-3 container-detail" >
         <div class="row g-0">
           <div class="col-md-3">
-            <img src="../../../../assets/img/location.jpeg" class="img-fluid rounded-start" alt="...">
+            <img src="../../../../assets/img/planets.jpeg" class="img-fluid rounded " alt="...">
           </div>
           <div class="col-md-8">
             <div class="card-body">
               <h5 class="card-title">{{location.name}}</h5>
               <ul class="list-group list-group-flush">
-                <li *ngIf="location.type" class="list-group-item">Type: {{location.type}}</li>
-                <li class="list-group-item">Dimension: {{location.dimension}}</li>
+                <li *ngIf="location.type" class="list-group-item style-li">Type: {{location.type}}</li>
+                <li class="list-group-item style-li">Dimension: {{location.dimension}}</li>
+                <li class="list-group-item style-li">Number of residents: {{location.residents.length}}</li>
               </ul>
-              <prettyjson [obj]="location"></prettyjson>
+              <prettyjson [obj]="location" class="custom-json"></prettyjson>
             </div>
           </div>
         </div>

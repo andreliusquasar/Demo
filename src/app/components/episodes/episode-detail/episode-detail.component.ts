@@ -57,7 +57,6 @@ export class EpisodeDetailComponent implements OnInit {
       `
     }).valueChanges.pipe(delay(400), tap(() => this.spinner.hide())).subscribe((res: any) => {
       this.episodeDetail = res.data.episode;
-      console.log(this.episodeDetail);
     })
   }
 
