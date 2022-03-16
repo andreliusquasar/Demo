@@ -11,6 +11,7 @@ import { CardListModule } from '../card-list-component/card-list-component.modul
 import { EpisodeDetailComponent } from './episode-detail/episode-detail.component';
 import { PrettyJsonModule } from 'angular2-prettyjson';
 import { NgxSpinnerModule } from 'ngx-spinner';
+import { I18nModule } from 'src/app/core/i18n.module';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { NgxSpinnerModule } from 'ngx-spinner';
         EpisodesRoutingModule,
         CardListModule,
         PrettyJsonModule,
-        NgxSpinnerModule
+        NgxSpinnerModule,
+        I18nModule
     ],
     declarations: [
         EpisodesComponent, 
