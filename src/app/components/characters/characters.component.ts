@@ -5,16 +5,19 @@ import { Component, OnInit } from '@angular/core';
 import { delay, pluck, tap } from 'rxjs';
 import { Router } from '@angular/router';
 
-import { NgxSpinnerService } from "ngx-spinner";
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-characters',
   templateUrl: './characters.component.html',
-  styleUrls: ['./characters.component.scss']
+  styleUrls: ['./characters.component.scss'],
 })
 export class CharactersComponent implements OnInit {
-
-  characters$ = this.service.getCharacters().pipe(delay(400), pluck('results'), tap(() => this.spinner.hide())); 
+  characters$ = this.service.getCharacters().pipe(
+    delay(400),
+    pluck('results'),
+    tap(() => this.spinner.hide())
+  );
 
   constructor(
     private service: ServiceRequest,
@@ -23,14 +26,14 @@ export class CharactersComponent implements OnInit {
     private translate: TranslateService,
     private languageService: NotificationI18nService
   ) {
-      this.spinner.show();
-    }
+    this.spinner.show();
+  }
 
-    ngOnInit(): void {
-      this.languageService.getLanguageI18n().subscribe((res: string) => {
-        this.translate.setDefaultLang(res);
-      });
-    }  
+  ngOnInit(): void {
+    this.languageService.getLanguageI18n().subscribe((res: string) => {
+      this.translate.setDefaultLang(res);
+    });
+  }
 
   redirectTo(id: number): void {
     this.router.navigate(['characters/detail', id]);
