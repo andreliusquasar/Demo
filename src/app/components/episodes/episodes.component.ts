@@ -1,6 +1,6 @@
 import { NotificationI18nService } from './../../core/notification-language.service';
 import { TranslateService } from '@ngx-translate/core';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { delay, pluck, tap } from 'rxjs';
@@ -12,7 +12,7 @@ import { NgxSpinnerService } from 'ngx-spinner';
   templateUrl: './episodes.component.html',
   styleUrls: ['./episodes.component.scss']
 })
-export class EpisodesComponent {
+export class EpisodesComponent implements OnInit {
 
   episodes$ = this.service.getEpisodes().pipe(delay(400), pluck('results'), tap(() => this.spinner.hide())); 
 
