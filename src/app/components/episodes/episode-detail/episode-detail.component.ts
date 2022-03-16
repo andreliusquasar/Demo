@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { delay, pluck, tap } from 'rxjs';
 
+import { NotificationI18nService } from './../../../core/notification-language.service';
+import { TranslateService } from '@ngx-translate/core';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { Apollo, gql } from 'apollo-angular';
 import { IEpisode } from 'src/app/shared/models/episode.model';
@@ -19,7 +21,9 @@ export class EpisodeDetailComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private apollo: Apollo,
-    private spinner: NgxSpinnerService
+    private spinner: NgxSpinnerService,
+    private translate: TranslateService,
+    private languageService: NotificationI18nService
   ) {
     this.episodeDetail = this.initEpisodeDetail();
     this.spinner.show();
@@ -27,6 +31,9 @@ export class EpisodeDetailComponent implements OnInit {
 
   ngOnInit(): void {
     this.initRequest();
+    this.languageService.getLanguageI18n().subscribe((res: string) => {
+      this.translate.setDefaultLang(res);
+    });
   }
 
   private initEpisodeDetail(): IEpisode {
