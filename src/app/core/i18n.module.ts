@@ -7,6 +7,7 @@ import { HttpClient } from '@angular/common/http';
 @NgModule({
     imports: [
         TranslateModule.forRoot({
+            defaultLanguage: 'en',
             loader: {
                 provide: TranslateLoader,
                 useFactory: HttpLoaderFactory,
