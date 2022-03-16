@@ -7,21 +7,17 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
 
   constructor(
     private translate: TranslateService,
     private languageService: NotificationI18nService
   ) {
-    translate.setDefaultLang('br');
-  }
-
-  ngOnInit(): void {
-    this.languageService.getLanguageI18n().subscribe((res: string) => this.translate.setDefaultLang(res));
+    translate.setDefaultLang('en');
   }
 
   useLanguage(language: string): void {
-    this.translate.use(language);
-}
+    this.languageService.setLanguageI18n(language);
+  }
 
 }
