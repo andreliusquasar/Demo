@@ -7,6 +7,7 @@ import { LocationDetailComponent } from './location-detail/location-detail.compo
 
 import { NgxSpinnerModule } from "ngx-spinner";
 import { PrettyJsonModule } from 'angular2-prettyjson';
+import { I18nModule } from 'src/app/core/i18n.module';
 
 @NgModule({
     imports: [
@@ -14,7 +15,8 @@ import { PrettyJsonModule } from 'angular2-prettyjson';
         LocationsRoutingModule,
         CardListModule,
         PrettyJsonModule,
-        NgxSpinnerModule
+        NgxSpinnerModule,
+        I18nModule
     ],
     declarations: [
         LocationsComponent,

@@ -1,0 +1,13 @@
+{
+  "characters": "Characters",
+  "locations": "Locations",
+  "episodes": "Episodes",
+  "btn": "Back",
+  "language": "English",
+  "languageMenu": {
+    "language": "Language",
+    "inglish": "English",
+    "portuguese": "Portuguese"
+  }
+
+}

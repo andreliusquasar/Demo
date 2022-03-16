@@ -19,6 +19,8 @@
     "@angular/platform-browser-dynamic": "~13.2.0",
     "@angular/router": "~13.2.0",
     "@apollo/client": "^3.5.10",
+    "@ngx-translate/core": "^14.0.0",
+    "@ngx-translate/http-loader": "^7.0.0",
     "@popperjs/core": "^2.11.2",
     "angular2-prettyjson": "^3.0.1",
     "apollo-angular": "^3.0.0",

@@ -1,3 +1,5 @@
+import { NotificationI18nService } from './../../core/notification-language.service';
+import { TranslateService } from '@ngx-translate/core';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -5,11 +7,17 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
 
-  constructor() { }
+  constructor(
+    private translate: TranslateService,
+    private languageService: NotificationI18nService
+  ) {
+    translate.setDefaultLang('en');
+  }
 
-  ngOnInit(): void {
+  useLanguage(language: string): void {
+    this.languageService.setLanguageI18n(language);
   }
 
 }
