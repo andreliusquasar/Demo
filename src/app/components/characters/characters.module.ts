@@ -8,6 +8,7 @@ import { CharacterDetailComponent } from './character-detail/character-detail.co
 
 import { PrettyJsonModule } from 'angular2-prettyjson';
 import { NgxSpinnerModule } from "ngx-spinner";
+import { I18nModule } from "src/app/core/i18n.module";
 
 @NgModule({
     schemas:[CUSTOM_ELEMENTS_SCHEMA],
@@ -16,7 +17,8 @@ import { NgxSpinnerModule } from "ngx-spinner";
         CharactersRoutingModule,
         CardListModule,
         PrettyJsonModule,
-        NgxSpinnerModule
+        NgxSpinnerModule,
+        I18nModule
     ],
     declarations: [
         CharactersComponent,
