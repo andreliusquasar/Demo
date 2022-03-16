@@ -3,6 +3,10 @@
   "locations": "Localizações",
   "episodes": "Episódios",
   "btn": "Back",
-  "en": "English",
-  "br": "Portuguese"
+  "language": "Português",
+  "languageMenu": {
+    "language": "Linguagem",
+    "inglish": "Inglês",
+    "portuguese": "Português"
+  }
 }
