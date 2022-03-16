@@ -12,9 +12,7 @@ export class SidebarComponent implements OnInit {
   constructor(
     private translate: TranslateService,
     private languageService: NotificationI18nService
-  ) {
-    translate.setDefaultLang('br');
-  }
+  ) {}
 
   ngOnInit(): void {
     this.languageService.getLanguageI18n().subscribe((res: string) => this.translate.setDefaultLang(res));
