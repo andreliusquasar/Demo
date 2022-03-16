@@ -1,7 +1,10 @@
-import { NgxSpinnerService } from 'ngx-spinner';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { delay, pluck, switchMap, tap } from 'rxjs';
+
+import { NotificationI18nService } from './../../../core/notification-language.service';
+import { TranslateService } from '@ngx-translate/core';
+import { NgxSpinnerService } from 'ngx-spinner';
 import { ServiceRequest } from 'src/app/shared/services/service.service';
 
 @Component({
@@ -9,7 +12,7 @@ import { ServiceRequest } from 'src/app/shared/services/service.service';
   templateUrl: './character-detail.component.html',
   styleUrls: ['./character-detail.component.scss']
 })
-export class CharacterDetailComponent {
+export class CharacterDetailComponent implements OnInit {
 
   episodes: string[];
 
@@ -22,10 +25,18 @@ export class CharacterDetailComponent {
   constructor(
     private route: ActivatedRoute,
     private service: ServiceRequest,
-    private spinner: NgxSpinnerService
+    private spinner: NgxSpinnerService,
+    private translate: TranslateService,
+    private languageService: NotificationI18nService
   ) {
     this.episodes = [];
     this.spinner.show();
+  }
+
+  ngOnInit(): void {
+    this.languageService.getLanguageI18n().subscribe((res: string) => {
+      this.translate.setDefaultLang(res);
+    });
   }
 
   private getEpisodes(episodes: string[]): void {
