@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { delay, pluck, tap } from 'rxjs';
-import { ServiceRequest } from './../../shared/services/service.service';
+import { ServiceRequest } from '../../shared/services/service-request.service';
 import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
