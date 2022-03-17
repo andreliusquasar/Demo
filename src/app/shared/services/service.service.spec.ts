@@ -37,6 +37,18 @@ fdescribe('ServiceRequest', () => {
     }
   ];
 
+  const episodesMock = [
+    {
+      id:	        2,
+      name:	    'string',
+      air_date:	'string',
+      episode:	'string',
+      characters:	[{name: 'string'}],
+      url:	    'string',
+      created:	'string',
+    }
+  ]
+
   beforeEach(() => {
     TestBed.configureTestingModule({
       schemas: [NO_ERRORS_SCHEMA],
@@ -69,7 +81,6 @@ fdescribe('ServiceRequest', () => {
     expect(req.request.method).toBe('GET');
     req.flush(charactersMock[0]);
   });
-
   
   it('should call getLocations method', () => {
     service.getLocations().subscribe((res) => {
@@ -88,6 +99,25 @@ fdescribe('ServiceRequest', () => {
     const req = httpMock.expectOne(`https://rickandmortyapi.com/api/location/${1}`);
     expect(req.request.method).toBe('GET');
     req.flush(locationsMock[0]);
+  });
+
+  it('should call getEpisodes method', () => {
+    service.getEpisodes().subscribe((res) => {
+      expect(res.length).toBe(1);
+      expect(res).toEqual(episodesMock);
+    });
+    const req = httpMock.expectOne('https://rickandmortyapi.com/api/episode');
+    expect(req.request.method).toBe('GET');
+    req.flush(episodesMock);
+  });
+  
+  it('should call getEpisodeDetail method', () => {
+    service.getEpisodeDetail(1).subscribe((res) => {
+      expect(res).toEqual(episodesMock[0]);
+    });
+    const req = httpMock.expectOne(`https://rickandmortyapi.com/api/episode/${1}`);
+    expect(req.request.method).toBe('GET');
+    req.flush(episodesMock[0]);
   });
 
 });
