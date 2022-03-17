@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 
-import { ICharacter } from './../models/character.model';
+import { ICharacter } from '../models/character.model';
 import { Injectable } from '@angular/core';
 import {  Observable } from 'rxjs';
 import { ILocation } from '../models/location.model';

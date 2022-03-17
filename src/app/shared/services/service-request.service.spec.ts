@@ -4,7 +4,7 @@ import { TestBed } from '@angular/core/testing';
 import { ServiceRequest } from './service.service';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 
-fdescribe('ServiceRequest', () => {
+describe('ServiceRequest', () => {
   let service: ServiceRequest;
   let httpMock: HttpTestingController;
 
