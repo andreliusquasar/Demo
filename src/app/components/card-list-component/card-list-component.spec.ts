@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CardListComponent } from './card-list-component';
 
-xdescribe('CardListComponent', () => {
+fdescribe('CardListComponent', () => {
   let component: CardListComponent;
   let fixture: ComponentFixture<CardListComponent>;
 
@@ -22,4 +22,11 @@ xdescribe('CardListComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should call action method', () => {
+    spyOn(component, 'action').and.callThrough();
+    component.action(1);
+    expect(component.action).toHaveBeenCalled();
+  });
+ 
 });
