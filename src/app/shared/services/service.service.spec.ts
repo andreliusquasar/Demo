@@ -70,4 +70,24 @@ fdescribe('ServiceRequest', () => {
     req.flush(charactersMock[0]);
   });
 
+  
+  it('should call getLocations method', () => {
+    service.getLocations().subscribe((res) => {
+      expect(res.length).toBe(1);
+      expect(res).toEqual(locationsMock);
+    });
+    const req = httpMock.expectOne('https://rickandmortyapi.com/api/location');
+    expect(req.request.method).toBe('GET');
+    req.flush(locationsMock);
+  });
+  
+  it('should call getLocationsDetail method', () => {
+    service.getLocationDetail(1).subscribe((res) => {
+      expect(res).toEqual(locationsMock[0]);
+    });
+    const req = httpMock.expectOne(`https://rickandmortyapi.com/api/location/${1}`);
+    expect(req.request.method).toBe('GET');
+    req.flush(locationsMock[0]);
+  });
+
 });
