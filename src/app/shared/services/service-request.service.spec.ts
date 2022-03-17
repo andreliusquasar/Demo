@@ -1,7 +1,7 @@
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 
-import { ServiceRequest } from './service.service';
+import { ServiceRequest } from './service-request.service';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 
 describe('ServiceRequest', () => {
