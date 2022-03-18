@@ -45,6 +45,18 @@
             ]
           },
           "configurations": {
+            "develop": {
+              "fileReplacements": [{
+                "replace": "src/environments/environment.ts",
+                "with": "src/environments/environment.develop.ts"
+              }]
+            },
+            "qa": {
+              "fileReplacements": [{
+                "replace": "src/environments/environment.ts",
+                "with": "src/environments/environment.qa.ts"
+              }]
+            },
             "production": {
               "budgets": [
                 {
@@ -65,15 +77,8 @@
                 }
               ],
               "outputHashing": "all"
-            },
-            "development": {
-              "buildOptimizer": false,
-              "optimization": false,
-              "vendorChunk": true,
-              "extractLicenses": false,
-              "sourceMap": true,
-              "namedChunks": true
             }
+          
           },
           "defaultConfiguration": "production"
         },
@@ -83,8 +88,11 @@
             "production": {
               "browserTarget": "demo:build:production"
             },
-            "development": {
-              "browserTarget": "demo:build:development"
+            "develop": {
+              "browserTarget": "demo:build:develop"
+            },
+            "qa": {
+              "browserTarget": "framework:build:qa"
             }
           },
           "defaultConfiguration": "development"
