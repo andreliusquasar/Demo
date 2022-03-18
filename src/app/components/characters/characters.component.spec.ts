@@ -68,7 +68,7 @@ describe('CharactersComponent', () => {
         { provide: TranslateService, useValue: translateStub },
         { provide: ServiceRequest, useValue: serviceStub },
         { provide: NgxSpinnerService, useValue: ngxSpinnerServiceStub },
-        { provide: NotificationI18nService, useValue: languageServiceStub },
+        { provide: NotificationI18nService, useValue: languageServiceStub }
       ]
     })
     .compileComponents();
