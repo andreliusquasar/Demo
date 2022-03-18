@@ -1,14 +1,15 @@
-import { NotificationI18nService } from './../../core/notification-language.service';
-import { ServiceRequest } from './../../shared/services/service-request.service';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { Router } from '@angular/router';
-import { TranslateService } from '@ngx-translate/core';
-
-import { CharactersComponent } from './characters.component';
 import { of, Subject } from 'rxjs';
 import { NO_ERRORS_SCHEMA, OnInit } from '@angular/core';
+
+import { TranslateService } from '@ngx-translate/core';
+import { ServiceRequest } from './../../shared/services/service-request.service';
+import { NotificationI18nService } from './../../core/notification-language.service';
 import { NgxSpinnerService } from 'ngx-spinner';
+
+import { CharactersComponent } from './characters.component';
 import { CardListComponent } from '../card-list-component/card-list-component';
 
 describe('CharactersComponent', () => {
@@ -30,7 +31,7 @@ describe('CharactersComponent', () => {
       episode: ['string'],
       url: 'urlMock',
       created: 'createdMock',
-    },
+    }
   ];
 
   const translateStub: Partial<TranslateService> = {

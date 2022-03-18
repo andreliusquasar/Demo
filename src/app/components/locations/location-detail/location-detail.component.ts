@@ -1,10 +1,11 @@
-import { NotificationI18nService } from './../../../core/notification-language.service';
-import { TranslateService } from '@ngx-translate/core';
-import { ServiceRequest } from '../../../shared/services/service-request.service';
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { delay, pluck, switchMap, tap } from 'rxjs';
+
+import { ServiceRequest } from '../../../shared/services/service-request.service';
+import { TranslateService } from '@ngx-translate/core';
 import { NgxSpinnerService } from 'ngx-spinner';
+import { NotificationI18nService } from './../../../core/notification-language.service';
 
 @Component({
   selector: 'app-location-detail',
@@ -12,6 +13,10 @@ import { NgxSpinnerService } from 'ngx-spinner';
   styleUrls: ['./location-detail.component.scss'],
 })
 export class LocationDetailComponent {
+   /***
+   * It is not correct to put delay in the request.
+   * I added just for example of using the ngx-spinner loading lib added to the project.
+   */
   locationDetail$ = this.route.params.pipe(
     pluck('id'),
     switchMap((id: number) =>
