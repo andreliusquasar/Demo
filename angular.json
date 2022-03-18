@@ -92,7 +92,7 @@
               "browserTarget": "demo:build:develop"
             },
             "qa": {
-              "browserTarget": "framework:build:qa"
+              "browserTarget": "demo:build:qa"
             }
           },
           "defaultConfiguration": "development"
