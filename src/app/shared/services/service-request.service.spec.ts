@@ -1,8 +1,8 @@
-import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 
 import { ServiceRequest } from './service-request.service';
-import { NO_ERRORS_SCHEMA } from '@angular/core';
 
 describe('ServiceRequest', () => {
   let service: ServiceRequest;
@@ -22,7 +22,7 @@ describe('ServiceRequest', () => {
       episode: ['string'],
       url: 'urlMock',
       created: 'createdMock',
-    },
+    }
   ];
 
   const locationsMock = [
@@ -47,7 +47,7 @@ describe('ServiceRequest', () => {
       url:	    'string',
       created:	'string',
     }
-  ]
+  ];
 
   beforeEach(() => {
     TestBed.configureTestingModule({
