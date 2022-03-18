@@ -4,8 +4,10 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "start-develop": "ng serve -c develop",
+    "start-qa": "ng serve -c qa",
     "build": "ng build",
-    "watch": "ng build --watch --configuration development",
+    "watch": "ng build --watch -c develop",
     "test": "ng test --code-coverage",
     "test:terminal": "ng test --code-coverage --browsers=ChromeHeadless"
   },
