@@ -14,8 +14,9 @@ export class ServiceRequest {
 
     constructor(private http: HttpClient) {}
 
-    getCharacters(): Observable<ICharacter[]> {
-      return this.http.get<ICharacter[]>(`${environment.apiUrl}/character`);
+    getCharacters(page?: number): Observable<ICharacter[]> {
+      const query = page ? `/character?page=${page}` : '/character';
+      return this.http.get<ICharacter[]>(`${environment.apiUrl}${query}`);
     }
 
     getCharactersDetail(id: number): Observable<ICharacter> {
