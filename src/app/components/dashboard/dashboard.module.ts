@@ -1,3 +1,4 @@
+import { I18nModule } from './../../core/i18n.module';
 import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
 
@@ -7,7 +8,8 @@ import { DashboardComponent } from "./dashboard.component";
 @NgModule({
     imports: [
         CommonModule,
-        DashboardRoutingModule
+        DashboardRoutingModule,
+        I18nModule
     ],
     declarations: [DashboardComponent]
 })
