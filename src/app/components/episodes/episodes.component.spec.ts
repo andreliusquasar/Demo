@@ -1,15 +1,16 @@
-import { NotificationI18nService } from './../../core/notification-language.service';
-import { ServiceRequest } from './../../shared/services/service-request.service';
 import { HttpClient } from '@angular/common/http';
+import { of, Subject } from 'rxjs';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { ActivatedRoute, Router } from '@angular/router';
+
+import { ServiceRequest } from './../../shared/services/service-request.service';
 import { TranslateService } from '@ngx-translate/core';
+import { NgxSpinnerService } from 'ngx-spinner';
+import { NotificationI18nService } from './../../core/notification-language.service';
 
 import { EpisodesComponent } from './episodes.component';
-import { of, Subject } from 'rxjs';
-import { NgxSpinnerService } from 'ngx-spinner';
-import { NO_ERRORS_SCHEMA } from '@angular/core';
 
 describe('EpisodesComponent', () => {
   let component: EpisodesComponent;
