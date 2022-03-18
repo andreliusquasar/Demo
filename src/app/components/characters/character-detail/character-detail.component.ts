@@ -16,6 +16,10 @@ export class CharacterDetailComponent implements OnInit {
 
   episodes: string[];
 
+   /***
+   * It is not correct to put delay in the request.
+   * I added just for example of using the ngx-spinner loading lib added to the project.
+   */
   characterDetail$ = this.route.params.pipe(
     pluck('id'),
     switchMap((id: number) => this.service.getCharactersDetail(id).pipe(delay(400), tap(() => this.spinner.hide()))),
