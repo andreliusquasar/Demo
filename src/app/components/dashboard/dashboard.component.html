@@ -1,6 +1,7 @@
-<div class="mb-3" >
-    <div class="row div-scroll">
-      <div class="col-3" *ngFor="let character of characters">
+<div class="mb-3 container-dashboard" >
+  <h1>Infinite scroll example</h1>
+    <div class="div-scroll">
+      <div class="container-cad" *ngFor="let character of characters">
         <div class="card" style="width: 18rem;" >
             <img [src]="character.image" class="card-img-top" alt="...">
             <div class="card-body">
