@@ -1,13 +1,14 @@
-import { NotificationI18nService } from './../../../core/notification-language.service';
-import { ServiceRequest } from './../../../shared/services/service-request.service';
-import { TranslateService } from '@ngx-translate/core';
+import { of, Subject } from 'rxjs';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { LocationDetailComponent } from './location-detail.component';
+import { ServiceRequest } from './../../../shared/services/service-request.service';
+import { TranslateService } from '@ngx-translate/core';
 import { NgxSpinnerService } from 'ngx-spinner';
-import { of, Subject } from 'rxjs';
-import { ActivatedRoute, Router } from '@angular/router';
-import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { NotificationI18nService } from './../../../core/notification-language.service';
+
+import { LocationDetailComponent } from './location-detail.component';
 
 describe('LocationDetailComponent', () => {
   let component: LocationDetailComponent;

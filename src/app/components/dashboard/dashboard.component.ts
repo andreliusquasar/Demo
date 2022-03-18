@@ -1,3 +1,5 @@
+import { NotificationI18nService } from './../../core/notification-language.service';
+import { TranslateService } from '@ngx-translate/core';
 import { Subscription } from 'rxjs';
 import { ServiceRequest } from './../../shared/services/service-request.service';
 import { Component, OnInit, AfterViewInit, OnDestroy } from '@angular/core';
@@ -15,15 +17,18 @@ export class DashboardComponent implements OnInit, AfterViewInit, OnDestroy {
   characters: ICharacter[];
   subscription: Subscription;
 
-  constructor( private service: ServiceRequest) {
+  constructor( 
+    private service: ServiceRequest,
+    private translate: TranslateService,
+    private languageService: NotificationI18nService
+  ) {
     this.characters = [];
     this.subscription = new Subscription();
    }
 
   ngOnInit() {
-    setTimeout(() => {
-      this.subscription = this.service.getCharacters(this.page).subscribe((res: any) => {this.characters = res.results; this.showList = true; })
-    }, 200)
+    this.subscription = this.service.getCharacters(this.page).subscribe((res: any) => {this.characters = res.results; this.showList = true; })
+    this.initTraslate(); 
   }
   
   ngAfterViewInit(): void {
@@ -48,6 +53,12 @@ export class DashboardComponent implements OnInit, AfterViewInit, OnDestroy {
      const div: any = document.querySelector('#sentinel');
      sentinela.observe(div);
      return () => sentinela.disconnect();
+   }
+
+   private initTraslate(): void {
+    this.languageService.getLanguageI18n().subscribe((res: string) => {
+      this.translate.setDefaultLang(res);
+    });
    }
 
 }

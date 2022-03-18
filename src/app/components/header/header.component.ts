@@ -1,6 +1,7 @@
-import { NotificationI18nService } from './../../core/notification-language.service';
+import { Component } from '@angular/core';
+
 import { TranslateService } from '@ngx-translate/core';
-import { Component, OnInit } from '@angular/core';
+import { NotificationI18nService } from './../../core/notification-language.service';
 
 @Component({
   selector: 'app-header',

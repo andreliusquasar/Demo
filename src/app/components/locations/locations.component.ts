@@ -13,6 +13,10 @@ import { Router } from '@angular/router';
 })
 export class LocationsComponent implements OnInit {
 
+   /***
+   * It is not correct to put delay in the request.
+   * I added just for example of using the ngx-spinner loading lib added to the project.
+   */
   locations$ = this.service.getLocations().pipe(delay(400), pluck('results'), tap(() => this.spinner.hide())); 
 
   constructor(

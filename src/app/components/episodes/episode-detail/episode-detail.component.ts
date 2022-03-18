@@ -48,6 +48,10 @@ export class EpisodeDetailComponent implements OnInit {
     }
   }
 
+   /***
+   * It is not correct to put delay in the request.
+   * I added just for example of using the ngx-spinner loading lib added to the project.
+   */
   private getEpisodeDetail(id: number): void {
     this.apollo.watchQuery({
       query: gql `
