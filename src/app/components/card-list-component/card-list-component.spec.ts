@@ -22,4 +22,11 @@ describe('CardListComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should call action method', () => {
+    spyOn(component, 'action').and.callThrough();
+    component.action(1);
+    expect(component.action).toHaveBeenCalled();
+  });
+ 
 });

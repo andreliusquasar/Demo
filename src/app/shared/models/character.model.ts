@@ -5,10 +5,10 @@ export interface ICharacter {
     species: string;
     type: string;
     gender: string;
-    origin: IAtribute,
-    location: IAtribute,
+    origin: IAtribute;
+    location: IAtribute;
     image: string;
-    episode: string[],
+    episode: string[];
     url: string;
     created: string;
 }
