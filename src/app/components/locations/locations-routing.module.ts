@@ -12,7 +12,6 @@ const routes: Routes = [
         path: 'detail/:id',
         component: LocationDetailComponent
     }
-
 ]
 
 @NgModule({
