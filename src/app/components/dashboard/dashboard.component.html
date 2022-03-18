@@ -1,1 +1,21 @@
-<p>dashboard works!</p>
+<div class="mb-3" >
+    <div class="row div-scroll">
+      <div class="col-3" *ngFor="let character of characters">
+        <div class="card" style="width: 18rem;" >
+            <img [src]="character.image" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">{{character.name}}</h5>
+              <p class="card-text">{{character.location.name}}</p>
+              <div class="group-status">
+                  <div class="card-text">{{character.status}}</div>
+                  <div [ngClass]="{'color': character.status != 'Alive'}"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="sentinel"></div>
+    </div>
+  </div>
+
+
+
