@@ -5,7 +5,7 @@ import { delay, pluck, switchMap, tap } from 'rxjs';
 import { NotificationI18nService } from './../../../core/notification-language.service';
 import { TranslateService } from '@ngx-translate/core';
 import { NgxSpinnerService } from 'ngx-spinner';
-import { ServiceRequest } from 'src/app/shared/services/service.service';
+import { ServiceRequest } from 'src/app/shared/services/service-request.service';
 
 @Component({
   selector: 'app-character-detail',

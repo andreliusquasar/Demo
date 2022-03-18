@@ -1,6 +1,6 @@
 import { NotificationI18nService } from './../../core/notification-language.service';
 import { TranslateService } from '@ngx-translate/core';
-import { ServiceRequest } from './../../shared/services/service.service';
+import { ServiceRequest } from '../../shared/services/service-request.service';
 import { Component, OnInit } from '@angular/core';
 import { delay, pluck, tap } from 'rxjs';
 import { Router } from '@angular/router';
