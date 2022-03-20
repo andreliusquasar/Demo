@@ -3,8 +3,54 @@
     flex-direction: row;
     justify-content: space-between;
     padding: 0 50px;
+    align-items: center;
 
     ul > li {
         cursor: pointer;
     }
+    .short-screen {
+        display: none;
+    }
 }
+
+@media only screen and (max-width: 940px) { 
+    button {
+        font-size: 0.8em;
+    }
+}
+
+@media only screen and (max-width: 650px) { 
+    .container-header {
+
+        button {
+            font-size: 0.8em;
+        }
+        .big-screen {
+            display: none;    
+        }
+        .short-screen {
+            display: block;
+        }
+    }
+}
+
+@media only screen and (max-width: 500px) { 
+    .container-header {
+        padding: 0 10px;
+
+        button {
+            padding: 0 5px 0 10px;
+        }
+        button:after {
+            content: "";
+            border: none;
+        }
+        .dropdown-screen {
+            min-width: 7rem;
+            font-size: 0.8em;
+        }
+
+  }
+
+}
+

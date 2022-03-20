@@ -8,3 +8,9 @@ img, svg {
     overflow-y: auto;
     height: 85vh;
 }
+
+@media only screen and (max-width: 695px) { 
+    .container-list {
+        height: 75vh;
+    }
+}
