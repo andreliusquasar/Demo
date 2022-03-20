@@ -3,6 +3,7 @@
     flex-direction: row;
     justify-content: space-between;
     padding: 0 50px;
+    align-items: center;
 
     ul > li {
         cursor: pointer;
@@ -33,9 +34,23 @@
     }
 }
 
-@media only screen and (max-width: 695px) { 
+@media only screen and (max-width: 500px) { 
     .container-header {
         padding: 0 10px;
+
+        button {
+            padding: 0 5px 0 10px;
+        }
+        button:after {
+            content: "";
+            border: none;
+        }
+        .dropdown-screen {
+            min-width: 7rem;
+            font-size: 0.8em;
+        }
+
   }
+
 }
 
