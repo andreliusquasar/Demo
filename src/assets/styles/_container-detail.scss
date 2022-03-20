@@ -56,3 +56,9 @@
 
     ::ng-deep .custom-json span {color: white;}
 }
+
+@media only screen and (max-width: 695px) { 
+    .container-detail {
+        height: 63vh!important;
+    }
+}
