@@ -1,11 +1,22 @@
 .sidebar-menu {
   width: 280px;
-  background-color: rgb(60, 62, 68);;
+  background-color: rgb(60, 62, 68);
+  padding-top: 30px;
+
+  .svg-screen {
+    display: none;
+    width: 30px;
+    height: 30px;
+  }
+
+  a {
+    margin-left: 50px;
+  }
 }
 
 .sidebar-content {
   width: 100%;
-  padding: 0 50px;
+  padding: 0 20px;
 }
 
 main {
@@ -26,4 +37,44 @@ main {
   vertical-align: -0.125em;
   pointer-events: none;
   fill: currentColor;
+}
+
+
+
+@media only screen and (max-width: 940px) { 
+  .sidebar-menu {
+    width: 170px;
+ 
+    a {
+      padding: 0;
+      margin-bottom: 15px;
+      margin-left: 30px;
+    }
+  }
+}
+
+@media only screen and (max-width: 800px) { 
+  .sidebar-menu {
+    width: 65px;
+    align-items: center;
+    
+    .svg-screen {
+      display: block;
+      margin-bottom: 30px;
+      
+      svg {
+        width: 30px;
+        height: 30px;
+      }
+    }
+    a {
+      display: none;
+    }
+  }
+}
+
+@media only screen and (max-width: 695px) { 
+  .sidebar-menu {
+    display: none!important;
+  }
 }

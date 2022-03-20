@@ -7,4 +7,35 @@
     ul > li {
         cursor: pointer;
     }
+    .short-screen {
+        display: none;
+    }
 }
+
+@media only screen and (max-width: 940px) { 
+    button {
+        font-size: 0.8em;
+    }
+}
+
+@media only screen and (max-width: 650px) { 
+    .container-header {
+
+        button {
+            font-size: 0.8em;
+        }
+        .big-screen {
+            display: none;    
+        }
+        .short-screen {
+            display: block;
+        }
+    }
+}
+
+@media only screen and (max-width: 695px) { 
+    .container-header {
+        padding: 0 10px;
+  }
+}
+
